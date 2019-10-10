@@ -121,7 +121,7 @@ def checkout(request):
                 'INDUSTRY_TYPE_ID': 'Retail',
                 'WEBSITE': 'WEBSTAGING',
                 'CHANNEL_ID': 'WEB',
-                'CALLBACK_URL':'http://localhost:8000/shop/handlerequest/',
+                'CALLBACK_URL':'http://vscart.herokuapp.com/shop/handlerequest/',
 
         }
         param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
