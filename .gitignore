@@ -1,5 +1,6 @@
 *.pyc
 __pycache__/
+migrations/
 Procfile
 runtime.txt
 README.md
