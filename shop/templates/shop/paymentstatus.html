@@ -2,16 +2,8 @@
 {% block title%}Payment | VSCart{% endblock %}
 {% block body %}
 <div class="container">
-<<<<<<< HEAD
 	{{response}}
-	<div class="col my-4">
-		<h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
-		{% if response.RESPCODE == '01' %}
-		ORDER SUCCESS
-=======
-    {{response}}
-    <div class="col my-4">
-
+	    <div class="col my-4">
         <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
         {% if response.RESPCODE == '01' %}
         ORDER SUCCESS
@@ -28,23 +20,7 @@
         {% endif%}
 
     </div>
->>>>>>> 9f637879d7ecc5d195660bc5db44c8e6facc111b
 
 			{% block js %}
-			<script>
-				alert('Thanks for ordering with us. Your order ID is {{id}}. Use it to track your order using our order tracker.');
-				localStorage.clear();
-				document.location = "/shop";
-			</script>
-			{% endblock %}
-		
-		{% else %}
-		ORDER FAILURE
-		{% endif%}
-	</div>
 </div>
-<<<<<<< HEAD
 {% endblock %}
-=======
-{% endblock %}
->>>>>>> 9f637879d7ecc5d195660bc5db44c8e6facc111b
