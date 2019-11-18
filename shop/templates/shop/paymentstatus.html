@@ -9,7 +9,7 @@
         ORDER SUCCESS
 		{% block js %}
 		<script>
-			alert('Thanks for ordering with us. Your order is {{id}}. Use it to track your order using our order tracker');
+			alert('Thanks for ordering with us. Your order is {{response.ORDERID}}. Use it to track your order using our order tracker');
 			localStorage.clear();
 			// document.location = "/shop";
 		</script>
