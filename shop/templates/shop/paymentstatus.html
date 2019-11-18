@@ -7,9 +7,11 @@
         <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
         {% if response.RESPCODE == '01' %}
         ORDER SUCCESS
+
+        <p>Thanks for ordering with us. Your order is {{response.ORDERID}}. Use it to track your order using our order tracker</p>
+
 		{% block js %}
 		<script>
-			alert('Thanks for ordering with us. Your order is {{response.ORDERID}}. Use it to track your order using our order tracker');
 			localStorage.clear();
 			// document.location = "/shop";
 		</script>
