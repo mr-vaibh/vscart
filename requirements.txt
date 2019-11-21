@@ -10,3 +10,4 @@ mysqlclient==1.4.4
 pycrypto==2.6.1
 pycryptodome==3.0rc1
 pillow==6.2.0
+reportlab==3.5.32
