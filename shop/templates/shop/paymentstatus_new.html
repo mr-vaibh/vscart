@@ -1,7 +1,57 @@
 {% extends 'shop/basic.html' %}
-{% block title%}Payment Status | VSCart{% endblock %}
+{% block title%}Payment | VSCart{% endblock %}
 {% block body %}
+<div class="container">
+	{{response}}
+	    <div class="col my-4">
+        <h2>Payment status regarding your order Id {{response.ORDERID}}</h2>
+        {% if response.RESPCODE == '01' %}
+        <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight: bolder;">ID</td>
+                    <td>{{reponse.ORDERID}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder;">Amount (in {{response.CURRENCY}})</td>
+                    <td>{{response.TXNAMOUNT}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder;">PAYMENT MODE</td>
+                    <td>{{response.PAYMENTMODE}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder;">TRANSACTION DATE</td>
+                    <td>{{response.TXNDATE}}</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder;">TRANSACTION STATUS</td>
+                    <td>Items in Cart Successfully ordered</td>
+                </tr>
+                <tr>
+                    <td style="font-weight: bolder;">BANK NAME</td>
+                    <td>{{response.BANKNAME}}</td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
 
+        <div class="alert alert-success" role="alert"><span><strong>Thanks for ordering with us. Your order is {{response.ORDERID}}. Use it to track your order using our order tracker</strong></span></div>
 
+        {% else %}
+        <div class="alert alert-danger" role="alert"><span><strong>{{response.RESPMSG}}</strong></span></div>
+        {% endif%}
 
+        {% block js %}
+		<script>
+			localStorage.clear();
+		</script>
+		{% endblock %}
+
+        <button onclick="document.location = '/shop';"><span><i class="fas fa-door-open"></i></span>Goto Home</button>
+		</div>
 {% endblock %}

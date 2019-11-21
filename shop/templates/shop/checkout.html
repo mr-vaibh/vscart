@@ -10,7 +10,7 @@
 
             <nav aria-label="breadcrumb">
   <ol class="breadcrumb mt-3">
-    <li class="breadcrumb-item active" aria-current="page">Your Cart Total Is <b>₹ <span id="totalPrice"></span></b>. Enter your details below & place your order. Thanks for using My Awesome Cart!</li>
+    <li class="breadcrumb-item active" aria-current="page">Your Cart Total Is <b>₹ <span id="totalPrice"></span></b>. Enter your details below & place your order. Thanks for using VSCart!</li>
   </ol>
 </nav>
 
@@ -100,11 +100,7 @@ if ($.isEmptyObject(cart)) {
 document.getElementById('cart').innerHTML = sum;
 document.getElementById('totalPrice').innerHTML = totalPrice;
 $('#itemsJson').val(JSON.stringify(cart));
-{% if thank %}
-alert('Thanks for ordering with us. Your order is is {{id}}. Use it to track your order using our order tracker');
-localStorage.clear();
-document.location = "/shop";
-{% endif %}
+
 $('#amount').val($('#totalPrice').html())
 </script>
 {% endblock %}
