@@ -51,11 +51,6 @@
 			localStorage.clear();      /* to clear cart */
 
 			/* Creating a FUNCTION to PRINT the REPORT */
-			// function printReport() {
-			//  window.frames["print_frame"].document.body.innerHTML = document.getElementById("printableTable").innerHTML;
-			//  window.frames["print_frame"].window.focus();
-			//  window.frames["print_frame"].window.print();
-			// }
 
 			function printReport() {
 				var divToPrint = document.getElementById('printableTable');
@@ -74,6 +69,5 @@
 
 
 		<!-- Jugaad -->
-		<iframe name="print_frame" width="0" height="0" frameborder="0" src="about:blank"></iframe>
 		</div>
 {% endblock %}
