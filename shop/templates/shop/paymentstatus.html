@@ -18,7 +18,7 @@
 				</tr>
 				<tr>
 					<td style="font-weight: bolder;">Amount (in {{response.CURRENCY}})</td>
-					<td>{{response.TXNAMOUNT}}</td>
+					<td>₹ {{response.TXNAMOUNT}}</td>
 				</tr>
 				<tr>
 					<td style="font-weight: bolder;">PAYMENT MODE</td>
@@ -51,25 +51,23 @@
 			localStorage.clear();      /* to clear cart */
 
 			/* Creating a FUNCTION to PRINT the REPORT */
+			// function printReport() {
+			//  window.frames["print_frame"].document.body.innerHTML = document.getElementById("printableTable").innerHTML;
+			//  window.frames["print_frame"].window.focus();
+			//  window.frames["print_frame"].window.print();
+			// }
+
 			function printReport() {
-			 window.frames["print_frame"].document.body.innerHTML = document.getElementById("printableTable").innerHTML;
-			 window.frames["print_frame"].window.focus();
-			 window.frames["print_frame"].window.print();
-			}
+				var divToPrint = document.getElementById('printableTable');
+				newWin = window.open("");
+				newWin.document.write(divToPrint.outerHTML);
+				newWin.print();
+				newWin.close();
+				newWin.document.close();
+		   }
 
 		</script>
 		{% endblock %}
-
-		<style type="text/css">
-			@media print {
-			  * {
-				display: none;
-			  }
-			  #printableTable {
-				display: block;
-			  }
-			}
-		</style>
 
 		<button class="Button Button--outline" onclick="printReport()">Print</button> <!-- Print Button -->
 		<button onclick="document.location = '/shop';"><span><i class="fas fa-door-open"></i></span>Goto Home</button>   <!-- back home button -->
