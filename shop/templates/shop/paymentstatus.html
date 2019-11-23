@@ -60,6 +60,17 @@
 		</script>
 		{% endblock %}
 
+		<style type="text/css">
+			@media print {
+			  * {
+				display: none;
+			  }
+			  #printableTable {
+				display: block;
+			  }
+			}
+		</style>
+
 		<button class="Button Button--outline" onclick="printReport()">Print</button> <!-- Print Button -->
 		<button onclick="document.location = '/shop';"><span><i class="fas fa-door-open"></i></span>Goto Home</button>   <!-- back home button -->
 
