@@ -59,7 +59,6 @@
 				var divToPrint = document.getElementById('printableTable');
 				newWin = window.open("", "", "width=900,height=900");
 				newWin.document.write("<body bgcolor='#000'></body>" + divToPrint.outerHTML);
-				newWin.document.write(divToPrint.outerHTML);
 				newWin.print();
 				newWin.close();
 		   }
