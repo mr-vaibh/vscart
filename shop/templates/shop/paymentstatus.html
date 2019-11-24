@@ -56,7 +56,7 @@
 
 			function printReport() {
 				var divToPrint = document.getElementById('printableTable');
-				newWin = window.open("");
+				newWin = window.open("", "", "width=1000,height=1000");
 				newWin.document.write(divToPrint.outerHTML);
 				newWin.print();
 				newWin.close();
