@@ -14,7 +14,7 @@ from .utils import render_to_pdf
 
 class GeneratePDF(View):
     def get(self, request, *args, **kwargs):
-        template = get_template('pdf/invoice.html')
+        template = get_template('invoice.html')
         context = {
             "invoice_id": 123,
             "customer_name": "John Cooper",
@@ -22,7 +22,7 @@ class GeneratePDF(View):
             "today": "Today",
         }
         html = template.render(context)
-        pdf = render_to_pdf('pdf/invoice.html', context)
+        pdf = render_to_pdf('invoice.html', context)
         if pdf:
             response = HttpResponse(pdf, content_type='application/pdf')
             filename = "Invoice_%s.pdf" %("12341231")
