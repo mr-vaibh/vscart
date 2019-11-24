@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from .views import GeneratePDF
 
 urlpatterns = [
     path("", views.index, name="ShopHome"),
@@ -11,6 +10,5 @@ urlpatterns = [
     path("products/<int:myid>", views.productView, name="ProductView"),
     path("checkout/", views.checkout, name="Checkout"),
     path("handlerequest/", views.handlerequest, name="HandleRequest"),
-    path("pdf/", GeneratePDF.as_view()),
 
 ]
