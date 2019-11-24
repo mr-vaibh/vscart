@@ -7,7 +7,7 @@ from PayTm import Checksum
 
 # Create your views here.
 from django.http import HttpResponse
-from django.template.loader import get_template
+
 from django.views.generic import View
 from .utils import render_to_pdf
 
