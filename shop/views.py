@@ -144,7 +144,7 @@ def handlerequest(request):
     if verify:
         if response_dict['RESPCODE'] == '01':
             print('order successful')
-            return Orders.objects.get(order_id=105)
+            o = Orders.objects.filter(order_id=106)
         else:
             print('order was not successful because' + response_dict['RESPMSG'])
     return render(request, 'shop/paymentstatus.html', {'response': response_dict})
