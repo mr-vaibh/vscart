@@ -124,7 +124,7 @@ def checkout(request):
 
         }
 
-        return Orders.objects.all()
+        o = Orders.objects.all()
 
         param_dict['CHECKSUMHASH'] = Checksum.generate_checksum(param_dict, MERCHANT_KEY)
         return render(request, 'shop/paytm.html', {'param_dict': param_dict})
