@@ -96,13 +96,14 @@ padding-right: 0;
     <strong>No Results for {{query}}</strong>{{msg}}
 </div>
 
+<script>
+// alert('{{msg}}');
+window.location.href = "/shop";
+</script>
+{% endif %}
 
 {% block js %}
 <script>
-// alert('{{msg}}');
-window.location.href = "/shop"
-{% endif %}
-
 
 // Find out the cart items from localStorage
 if (localStorage.getItem('cart') == null) {
