@@ -42,7 +42,7 @@ padding-right: 0;
 {% load static %}
 <div class="container">
 
-    <div class="alert alert-danger" id="msg">
+    <div class="alert alert-danger" id="alertMsg">
         <strong>No results for {{query}}</strong>{{msg}}
     </div>
     <!--Slideshow starts here -->
@@ -95,13 +95,13 @@ padding-right: 0;
 {% block js %}
 <script>
 
-document.getElementById("msg").style.display = "none";
+document.getElementById("alertMsg").style.display = "none";
 
 {% if msg|length != 0 %}
 // alert('{{msg}}');
-console.log('above alert')
-document.getElementById("msg").style.display = "block";
-console.log('below alert')
+console.log('above alertMsg')
+document.getElementById("alertMsg").style.display = "block";
+console.log('below alertMsg')
 {% endif %}
 
 
