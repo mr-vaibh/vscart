@@ -42,7 +42,7 @@ padding-right: 0;
 {% load static %}
 <div class="container">
 
-    <div class="alert alert-danger" id="msg" hidden="hidden">
+    <div class="alert alert-danger" id="msg">
         <strong>No results for {{query}}</strong>{{msg}}
     </div>
     <!--Slideshow starts here -->
@@ -94,6 +94,8 @@ padding-right: 0;
 {% endblock %}
 {% block js %}
 <script>
+
+document.getElementById("msg").style.display = "none";
 
 {% if msg|length != 0 %}
 // alert('{{msg}}');
