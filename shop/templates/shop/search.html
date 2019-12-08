@@ -42,8 +42,14 @@ padding-right: 0;
 {% load static %}
 <div class="container">
 
-    <div class="alert alert-danger" id="alertMsg">
-        <strong>No results for {{query}}</strong>{{msg}}
+    <div class="mx-4" id="noResult">
+        <div class="alert alert-danger" id="alertMsg">
+            <strong>No results for {{query}} </strong>{{msg}}
+        </div>
+
+        <h3>Need Help ?</h3>
+
+        <p><a href="#">Visit the help section</a> or <a href="/contact">Contact Us</a>.</p>
     </div>
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
@@ -95,13 +101,11 @@ padding-right: 0;
 {% block js %}
 <script>
 
-document.getElementById("alertMsg").style.display = "none";
+document.getElementById("noResult").style.display = "none";
 
 {% if msg|length != 0 %}
 // alert('{{msg}}');
-console.log('above alertMsg')
-document.getElementById("alertMsg").style.display = "block";
-console.log('below alertMsg')
+document.getElementById("noResult").style.display = "block";
 {% endif %}
 
 
@@ -132,7 +136,6 @@ $('#popcart').popover({ trigger: 'focus' });
 updatePopover(cart);
 
 function updatePopover(cart) {
-    console.log('We are inside updatePopover');
     var popStr = "";
     popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
     var i = 1;
@@ -142,7 +145,6 @@ function updatePopover(cart) {
         i = i + 1;
     }
     popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' id='checkout'>Checkout</button></a>  <button class='btn btn-primary' id='clearCart' onclick='clearCart()'>Clear Cart</button>"
-    console.log(popStr);
     document.getElementById('popcart').setAttribute('data-content', popStr);
     $('#popcart').popover('enable');
 }
@@ -167,7 +169,6 @@ function updateCart(cart) {
     }
     localStorage.setItem('cart', JSON.stringify(cart));
     document.getElementById('cart').innerHTML = sum
-    console.log(cart);
     updatePopover(cart);
 }
 // If plus or minus button is clicked, change the cart as well as the display value
