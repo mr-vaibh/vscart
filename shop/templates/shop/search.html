@@ -42,14 +42,14 @@ padding-right: 0;
 {% load static %}
 <div class="container">
 
-    <div class="mx-4" id="noResult">
+    <div class="mt-4" id="noResult">
         <div class="alert alert-danger" id="alertMsg">
             <strong>No results for {{query}} </strong>{{msg}}
         </div>
 
         <h3>Need Help ?</h3>
 
-        <p><a href="#">Visit the help section</a> or <a href="/contact">Contact Us</a>.</p>
+        <p><a href="#">Visit the help section</a> or <a href="/shop/contact">Contact Us</a>.</p>
     </div>
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
