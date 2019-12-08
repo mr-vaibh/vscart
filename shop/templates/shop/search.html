@@ -43,13 +43,15 @@ padding-right: 0;
 <div class="container">
 
     <div class="mt-4" id="noResult">
-        <div class="alert alert-danger fade in" id="alertMsg">
+        <div class="alert alert-danger" id="alertMsg">
             <strong>No results for {{query}}. </strong>{{msg}}
         </div>
 
         <h3>Need Help ?</h3>
 
         <p><a href="#">Visit the help section</a> or <a href="/shop/contact">Contact Us</a>.</p>
+
+        <button class="btn btn-danger" onclick="document.location = '/shop';"><span><i class="fas fa-door-open"></i></span>Goto Home</button>   <!-- back home button -->
     </div>
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
