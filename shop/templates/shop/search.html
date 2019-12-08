@@ -97,9 +97,11 @@ padding-right: 0;
 
 {% if msg|length != 0 %}
 // alert('{{msg}}');
+console.log('above alert')
 document.getElementById("msg").style.display = "block";
-
+console.log('below alert')
 window.location.href = "/shop"
+console.log('below below alert')
 {% endif %}
 
 
