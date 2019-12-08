@@ -41,6 +41,7 @@ padding-right: 0;
 {% block body %}
 {% load static %}
 <div class="container">
+
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
     <h5 class="my-4">Flash Sale On {{product.0.category}} - Recommended Items</h5>
@@ -88,12 +89,18 @@ padding-right: 0;
     {% endfor %}
 </div>
 {% endblock %}
-{% block js %}
-<script>
 
 {% if msg|length != 0 %}
-alert('{{msg}}');
-window.location.href = "/"
+
+<div class="alert alert-danger">
+    <strong>No Results for {{query}}</strong>{{msg}}
+</div>
+
+
+{% block js %}
+<script>
+// alert('{{msg}}');
+window.location.href = "/shop"
 {% endif %}
 
 

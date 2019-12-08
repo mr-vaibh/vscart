@@ -44,7 +44,7 @@ def search(request):
             allProds.append([prod, range(1, nSlides), nSlides])
     params = {'allProds': allProds, "msg": ""}
     if len(allProds) == 0 or len(query)<4:
-        params = {'msg': "Please make sure to enter relevant search query"}
+        params = {'msg': "Please make sure to enter relevant search query", 'query' : query}
     return render(request, 'shop/search.html', params)
 
 
