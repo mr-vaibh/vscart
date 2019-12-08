@@ -42,6 +42,9 @@ padding-right: 0;
 {% load static %}
 <div class="container">
 
+    <div class="alert alert-danger" id="msg" hidden="hidden">
+        <strong>No results for {{query}}</strong>{{msg}}
+    </div>
     <!--Slideshow starts here -->
     {% for product, range, nSlides in allProds %}
     <h5 class="my-4">Flash Sale On {{product.0.category}} - Recommended Items</h5>
@@ -89,21 +92,16 @@ padding-right: 0;
     {% endfor %}
 </div>
 {% endblock %}
-
-{% if msg|length != 0 %}
-
-<div class="alert alert-danger">
-    <strong>No Results for {{query}}</strong>{{msg}}
-</div>
-
-<script>
-// alert('{{msg}}');
-window.location.href = "/shop";
-</script>
-{% endif %}
-
 {% block js %}
 <script>
+
+{% if msg|length != 0 %}
+// alert('{{msg}}');
+document.getElementById("msg").style.display = "block";
+
+window.location.href = "/shop"
+{% endif %}
+
 
 // Find out the cart items from localStorage
 if (localStorage.getItem('cart') == null) {
