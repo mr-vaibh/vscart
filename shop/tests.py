@@ -1,3 +1,7 @@
-from django.test import TestCase
+def f():
+	a = 4
+	b = 5
 
-# Create your tests here.
+print(f().b)
+
+input()
