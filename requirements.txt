@@ -8,7 +8,7 @@ sqlparse==0.3.0
 whitenoise==4.1.4
 mysqlclient==1.4.4
 pycrypto==2.6.1
-pycryptodome==3.0rc1
+pycryptodome==3.6.6
 pillow==8.3.2
 reportlab==3.5.32
 xhtml2pdf==0.2.3
