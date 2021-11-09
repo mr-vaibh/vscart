@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Product, Contact, Orders, OrderUpdate
 from math import ceil
+
+import os
+
 import json
 from django.views.decorators.csrf import csrf_exempt
 from PayTm import Checksum
@@ -8,7 +11,7 @@ from PayTm import Checksum
 # Create your views here.
 from django.http import HttpResponse
 
-MERCHANT_KEY = '<merchent_key_here>';
+MERCHANT_KEY = os.environ.get('MERCHANT_KEY');
 
 def index(request):
     allProds = []
@@ -113,7 +116,7 @@ def checkout(request):
         # return render(request, 'shop/checkout.html', {'thank':thank, 'id': id})
         # Request paytm to transfer the amount to your account after payment by user
         param_dict = {
-                'MID':'<mid_here>',
+                'MID': os.environ.get('MID'),
                 'ORDER_ID': str(order.order_id),
                 'TXN_AMOUNT': str(amount),
                 'CUST_ID': email,
